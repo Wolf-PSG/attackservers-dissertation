@@ -1,1 +1,8 @@
-This is the attack testing and server for Parmjit Singh Gill's dissertation
+This is the attack simulation and server for Parmjit Singh Gill's dissertation
+
+
+run the simulation server with node server.js
+
+and the simulate the attack server in a different terminal run node attack_server.js
+
+Once you have typed in the first advanced XSS attack on the simulation server, you will need to reload the attack server to then get responses from the simulation server. This must be done on each subsequent message sent from the simulation server.
