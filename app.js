@@ -26,10 +26,10 @@ app.use(
         maxAge: 3600000,
         cookie: { secure: false }, // Note that the cookie-parser module is no longer needed
         store: new store({
-            host: '127.0.0.1',
-            port: 6379,
+                        //             host: '127.0.0.1',
+            // port: 6379,
             client: client,
-            ttl: 86400,
+            // ttl: 86400,
         }),
     })
 );
