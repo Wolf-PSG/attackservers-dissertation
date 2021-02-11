@@ -1,7 +1,6 @@
-// add the app.js file
 const app = require('./app');
 const server = app.listen(process.env.PORT || 3000, () => {
-    console.log('listening on 4000');
+    console.log('listening on 4000 on heroku - 3000 on localhost');
 });
 
 process.on('unhandledRejection', (err) => {
