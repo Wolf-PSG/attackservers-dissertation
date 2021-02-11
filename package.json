@@ -8,7 +8,7 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "yarn start": "nodemon start"
+    "yarn start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
