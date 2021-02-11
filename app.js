@@ -2,11 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const redis = require('redis');
-const client = redis.createClient(process.env.REDIS_URL, {
-    tls: {
-        rejectUnauthorized: false,
-    },
-});
+const client = redis.createClient(process.env.REDIS_URL);
 const store = require('connect-redis')(session);
 const testRouter = require('./routes/test.route');
 const app = express(); //you don't need to manully define the content type in express
