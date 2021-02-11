@@ -1,7 +1,7 @@
 // add the app.js file
 const app = require('./app');
 const server = app.listen(4000, () => {
-    console.log(`Listening on port: ${port}`);
+    console.log('listening on 4000');
 });
 
 process.on('unhandledRejection', (err) => {
