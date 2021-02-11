@@ -1,6 +1,6 @@
 // add the app.js file
 const app = require('./app');
-const server = app.listen(4000, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
     console.log('listening on 4000');
 });
 
