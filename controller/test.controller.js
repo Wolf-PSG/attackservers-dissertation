@@ -5,7 +5,10 @@ exports.getMessages = (req, res) => {
     try {
         if (req.query.newMessage) messages.push(req.query.newMessage);
         const data = messages.map((message) => `<dd>${message}</dd>`).join(' ');
-        const template = fs.readFileSync('./templates/index.html', 'utf8');
+        const template = fs.readFileSync(
+            `${__dirname}/templates/index.html`,
+            'utf8'
+        );
         const view = template.replace('$messages$', data);
         res.send(view);
     } catch (err) {
@@ -15,7 +18,6 @@ exports.getMessages = (req, res) => {
 
 exports.destorySession = (req, res) => {
     req.session.destroy((err) => {
-        console.log('seses');
         res.redirect('/');
     });
 };
