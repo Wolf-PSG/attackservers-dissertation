@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const redis = require('redis');
-const client = redis.createClient({ auth_pass: 'Iamtheman1234!' });
+const client = redis.createClient();
 const store = require('connect-redis')(session);
 const testRouter = require('./routes/test.route');
 const app = express(); //you don't need to manully define the content type in express
@@ -22,7 +22,7 @@ app.use(
         maxAge: 3600000,
         cookie: { secure: false }, // Note that the cookie-parser module is no longer needed
         store: new store({
-            host: 'localhost',
+            host: 'redis://127.0.0.1',
             port: 6379,
             client: client,
             ttl: 86400,
