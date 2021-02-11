@@ -5,12 +5,12 @@
   "author": "Parmjit Singh Gill",
   "license": "MIT",
   "devDependencies": {
-    "express": "^4.17.1"
   },
   "scripts": {
     "yarn start": "node server.js"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "cors": "^2.8.5",
     "express-session": "^1.17.1",
     "helmet": "^4.3.1",
