@@ -4,7 +4,7 @@ const session = require('express-session');
 const testRouter = require('./routes/test.route');
 const app = express(); //you don't need to manully define the content type in express
 app.use(cors());
-app.use(express.static(`public`)); //creates a static page which is linked to the url
+app.use(express.static(`templates`)); //creates a static page which is linked to the url
 app.use(
     session({
         secret: 'secret',
