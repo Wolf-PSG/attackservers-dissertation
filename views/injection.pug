@@ -1,0 +1,7 @@
+extends  ./base/header.pug
+block content
+  .h-auto
+    body.container.m-auto.bg-white.shadow-md.rounded.px-8.pt-6.pb-8.mb-4.flex.flex-col
+      form.container.justify-center(action="POST")
+        input.border.p-2.border-indigo-500.w-max.rounded-md(placeholder="Enter your post")
+        button(class="border border-indigo-500 bg-indigo-500 text-white w-max rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-400 focus:outline-none focus:shadow-outline" type="submit") Submit 
